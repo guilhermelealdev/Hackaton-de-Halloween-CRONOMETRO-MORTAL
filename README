@@ -1,2 +1,1 @@
-separei as fases em pastas diferentes apenas para manuseamento mais fácil, mas para permitir que o jogo tenha sua navegação como intencionada coloque TODOS arquivos dentro de uma pasta somente e comece pelo
-"index"
+comece em "index"
