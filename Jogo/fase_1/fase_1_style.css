@@ -1,22 +1,58 @@
-body{
-    display: flex;
-    align-self: flex-end;
-    justify-self: end;
-    background-color: black;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.background-imagem {
+    width: 100vw;
     height: 100vh;
-    margin: 0;
+    background-image: url('fase_1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-#caixa{
-    background-color: red;
-    align-self: center;
-    justify-self: end;
-    padding: 150px;
-    margin: 0;
+
+
+/* Botão invisível centralizado na parte inferior */
+#botao-secreto {
+    position: absolute;
+    bottom: 8%;
+    left: 46%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0); /* invisível total */
+    cursor: pointer;
 }
-a{
-    background-color: yellow;
-    align-self: center;
-    justify-self: end;
-    padding: 125px;
-    padding-left: 135px;
+
+@font-face {
+    font-family: 'Witchwoode';
+    src: url('fonts/Witchwoode.ttf') format('truetype');
+}
+
+#tooltip {
+    position: fixed;
+    opacity: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 28px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    backdrop-filter: blur(3px);
+    font-family: 'Witchwoode', serif;
+    letter-spacing: 1px;
+}
+
+#tooltip.show {
+    opacity: 1;
+    transform: scale(1);
 }

@@ -1,15 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="fase_1_style.css">
+    <title>Fase 1 - Início</title>
+    <link rel="stylesheet" href="fase1.css">
 </head>
 <body>
-    <div id = "caixa">
-        <a href="fase_2.html">Banheira</a>
-    </div>
+
+    <div class="background-imagem"></div>
+
+    <img id="back" src="voltarFase.png" alt="Botão Voltar" onclick="voltarInicio()">
+
+    <!-- Botão Invisível -->
+    <div id="botao-secreto"></div>
     
+    <!-- Texto que aparece quando o jogador se aproxima -->
+    <div id="tooltip">Quebrar Correntes</div>
+
+    <script>
+        function voltarInicio() {
+            window.location.href = "start.html";
+        }
+
+        function proximaFase() {
+            window.location.href = "fase1_1.html";
+        }
+
+        const botao = document.getElementById("botao-secreto");
+        const tooltip = document.getElementById("tooltip");
+
+        document.addEventListener("mousemove", (e) => {
+            const rect = botao.getBoundingClientRect();
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const dist = Math.hypot(mouseX - centerX, mouseY - centerY);
+
+            // Mostra texto quando o mouse chega perto
+            if (dist < 150) {
+                tooltip.style.opacity = 1;
+                tooltip.style.left = mouseX + 20 + "px";
+                tooltip.style.top = mouseY + 20 + "px";
+
+                // Texto muda conforme a proximidade
+                if (dist < 60) {
+                    tooltip.textContent = "Quebrar Correntes";
+                }
+                
+            } else {
+                tooltip.style.opacity = 0;
+            }
+        });
+
+        // Clicar no botão leva à próxima fase
+        botao.addEventListener("click", () => {
+            proximaFase();
+        });
+    </script>
+
 </body>
 </html>

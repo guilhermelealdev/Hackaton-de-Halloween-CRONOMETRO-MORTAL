@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Fundo do Jogo</title>
+    <link rel="stylesheet" href="start.css">
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="tela_menu.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script>
+        const tela = document.body;
+
+        tela.addEventListener('click', function() {
+            //Fase 1
+            window.location.href = 'fase1.html';
+        });
+        
+    </script>
+</body>
+</html>
