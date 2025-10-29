@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-size: xx-large;
+}
+.botaoStart{
+    align-self: center;
+    background-color: red;
+    padding: 110px;
+    padding-right: 130px;
+    padding-left: 130px;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 10px, white;
+    
+}
+a{
+    padding: 100px;
+    padding-right: 130px;
+    padding-left: 130px;
+    background-color: yellow;
+    z-index: 1000;
+}
