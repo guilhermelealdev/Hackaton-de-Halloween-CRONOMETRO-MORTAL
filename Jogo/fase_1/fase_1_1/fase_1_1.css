@@ -21,25 +21,66 @@ html, body {
 }
 
 /* Botão invisível centralizado na parte inferior */
-#botao-secreto {
+@font-face {
+    font-family: 'Witchwoode';
+    src: url('fonts/Witchwoode.ttf') format('truetype');
+}
+
+#tooltip {
+    position: fixed;
+    opacity: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 28px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    backdrop-filter: blur(3px);
+    font-family: 'Witchwoode', serif;
+    letter-spacing: 1px;
+}
+
+#tooltip.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#tooltip2 {
+    position: fixed;
+    opacity: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 28px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    backdrop-filter: blur(3px);
+    font-family: 'Witchwoode', serif;
+    letter-spacing: 1px;
+}
+
+#tooltip2.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#botao-secreto2{
     position: absolute;
-    bottom: 39%;
-    left: 70%;
+    bottom: 6%;
+    left: 20%;
     transform: translateX(-50%);
     width: 180px;
-    height: 80px;
+    height: 140px;
     background: rgba(255, 255, 255, 0); /* invisível total */
     cursor: pointer;
 }
-
-/* Tooltip (texto que aparece quando se aproxima) */
-#tooltip {
-    position: fixed;
-    pointer-events: none;
-    opacity: 0;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-size: 18px;
-    
+#botao-secreto {
+    position: absolute;
+    bottom: 25%;
+    right: 6%;
+    transform: translateX(-50%);
+    width: 375px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0); /* invisível total */
+    cursor: pointer;
 }

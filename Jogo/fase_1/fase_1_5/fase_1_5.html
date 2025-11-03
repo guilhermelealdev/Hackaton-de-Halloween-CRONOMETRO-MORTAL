@@ -4,29 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fase 1 - Início</title>
-    <link rel="stylesheet" href="fase_1_style.css">
+    <link rel="stylesheet" href="fase_1_5.css">
 </head>
 <body>
 
-    <div class="background-imagem"></div>
-
-    <img id="back" src="voltarFase.png" alt="Botão Voltar" onclick="voltarInicio()">
-
-    <!-- Botão Invisível -->
-    <div id="botao-secreto"></div>
+    <div >
+        <img class="background-imagem" src="fase_1_5.png" alt="">
+    </div>
     
+      <div id="botao-secreto"></div>
+
     <!-- Texto que aparece quando o jogador se aproxima -->
-    <div id="tooltip">Quebrar Correntes</div>
+    <div id="tooltip">Desparafuzar Ventilação</div>
 
     <script>
-        function voltarInicio() {
-            window.location.href = "start.html";
+                function proximaFase() {
+            window.location.href = "../fase_1_6/fase_1_6.html";
         }
-
-        function proximaFase() {
-            window.location.href = "../fase_1_1/fase_1_1.html";
-        }
-
         const botao = document.getElementById("botao-secreto");
         const tooltip = document.getElementById("tooltip");
 
@@ -48,7 +42,7 @@
 
                 // Texto muda conforme a proximidade
                 if (dist < 60) {
-                    tooltip.textContent = "Quebrar Correntes";
+                    tooltip.textContent = "Desparafuzar Ventilação";
                 }
                 
             } else {
@@ -61,6 +55,5 @@
             proximaFase();
         });
     </script>
-
 </body>
 </html>
