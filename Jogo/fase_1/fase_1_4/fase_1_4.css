@@ -14,21 +14,24 @@ html, body {
 .background-imagem {
     width: 100vh;
     height: 100vh;
-    background-image: url('fase_1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+body{
+    background-image: url('fase_1_4.png');
 }
 
 
 /* Botão invisível centralizado na parte inferior */
 #botao-secreto {
     position: absolute;
-    bottom: 8%;
-    left: 46%;
+    bottom: 70%;
+    right: 65%;
     transform: translateX(-50%);
-    width: 300px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     background: rgba(255, 255, 255, 0); /* invisível total */
     cursor: pointer;
 }

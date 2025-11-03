@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fase 1 - Início</title>
-    <link rel="stylesheet" href="fase_1_2.css">
+    <link rel="stylesheet" href="fase_1_4.css">
 </head>
 <body>
 
-    <div >
-        <img class="background-imagem" src="fase_1_2.png" alt="">
-    </div>
+    <div class="background-imagem"></div>
+    <img id="back" src="voltarFase.png" alt="Botão Voltar" onclick="voltarInicio()">
     
       <div id="botao-secreto"></div>
 
@@ -19,8 +18,9 @@
 
     <script>
         function proximaFase() {
-            window.location.href = "../fase_1_3/fase_1_3.html";
+            window.location.href = "../fase_1_5/fase_1_5.html";
         }
+
         const botao = document.getElementById("botao-secreto");
         const tooltip = document.getElementById("tooltip");
 
@@ -42,7 +42,7 @@
 
                 // Texto muda conforme a proximidade
                 if (dist < 60) {
-                    tooltip.textContent = "Banheira";
+                    tooltip.textContent = "Ventilação";
                 }
                 
             } else {

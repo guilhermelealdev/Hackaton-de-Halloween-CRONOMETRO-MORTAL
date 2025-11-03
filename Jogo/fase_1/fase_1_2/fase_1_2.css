@@ -18,5 +18,15 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
 }
+#botao-secreto {
+    position: absolute;
+    bottom: 28%;
+    right: 35%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0); /* invisível total */
+    cursor: pointer;
+}
 
 
