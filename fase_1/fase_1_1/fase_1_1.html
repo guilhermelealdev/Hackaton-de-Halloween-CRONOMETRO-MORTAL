@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 1 - Início</title>
+    <link rel="stylesheet" href="fase_1_1.css">
+</head>
+<body>
+
+    <div class="background-imagem"></div>
+    <img id="back" src="voltarFase.png" alt="Botão Voltar" onclick="voltarInicio()">
+    
+      <div id="botao-secreto"></div>
+      <div id="botao-secreto2"></div>
+
+    <!-- Texto que aparece quando o jogador se aproxima -->
+    <div id="tooltip">Banheira</div>
+    <div id="tooltip2">Esgoto</div>
+
+    <script>
+        function proximaFase() {
+            window.location.href = "../fase_1_2/fase_1_2.html";
+        }
+        function jumpscare(){
+            window.location.href = "../jumpscareLucao/jumpscareLucao.html"
+        }
+
+        const botao = document.getElementById("botao-secreto");
+        const botao2 = document.getElementById("botao-secreto2");
+        const tooltip = document.getElementById("tooltip");
+        const tooltip2 = document.getElementById("tooltip2");
+
+        document.addEventListener("mousemove", (e) => {
+            const rect = botao.getBoundingClientRect();
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const dist = Math.hypot(mouseX - centerX, mouseY - centerY);
+
+            // Mostra texto quando o mouse chega perto
+            if (dist < 150) {
+                tooltip.style.opacity = 1;
+                tooltip.style.left = mouseX + 20 + "px";
+                tooltip.style.top = mouseY + 20 + "px";
+
+                // Texto muda conforme a proximidade
+                if (dist < 60) {
+                    tooltip.textContent = "Banheira";
+                }
+                
+            } else {
+                tooltip.style.opacity = 0;
+            }
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            const rect = botao2.getBoundingClientRect();
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const dist = Math.hypot(mouseX - centerX, mouseY - centerY);
+
+            // Mostra texto quando o mouse chega perto
+            if (dist < 150) {
+                tooltip2.style.opacity = 1;
+                tooltip2.style.left = mouseX + 20 + "px";
+                tooltip2.style.top = mouseY + 20 + "px";
+
+                // Texto muda conforme a proximidade
+                if (dist < 60) {
+                    tooltip2.textContent = "Esgoto";
+                }
+                
+            } else {
+                tooltip2.style.opacity = 0;
+            }
+        });
+
+        // Clicar no botão leva à próxima fase
+        botao.addEventListener("click", () => {
+            proximaFase();
+        });
+        botao2.addEventListener("click", () => {
+            jumpscare();
+        });
+    </script>
+</body>
+</html>
