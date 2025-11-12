@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.background-imagem {
+    width: 90vw;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#botao-secreto {
+    position: absolute;
+    bottom: 28%;
+    right: 35%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0); /* invisível total */
+    cursor: pointer;
+  
+}
+.video-container {
+    /* Define a área de tela cheia (exemplo: 100% da viewport) */
+    position: relative; /* Importante para posicionamento absoluto interno */
+    width: 100vw; /* 100% da largura da viewport */
+    height: 100vh; /* 100% da altura da viewport */
+    overflow: hidden; /* Garante que o vídeo não cause barras de rolagem se for um pouco maior */
+    margin: 0;
+    padding: 0;
+}
+
+#meuVideo {
+    /* O vídeo deve ser absoluto dentro do container */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o vídeo perfeitamente */
+
+    /* Garante que o vídeo cubra todo o contêiner */
+    width: 100%;
+    height: 100%;
+    
+    /* Garante que a proporção seja mantida, preenchendo a área (pode cortar as bordas) */
+    object-fit: cover; 
+}
+
