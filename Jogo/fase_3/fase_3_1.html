@@ -17,14 +17,17 @@
       <div id="botao-secreto2"></div>
 
     <!-- Texto que aparece quando o jogador se aproxima -->
-    <div id="tooltip">Banheira</div>
+    <div id="tooltip">esquerda</div>
+    <div id="tooltip2">Direita</div>
 
     <script>
         function proximaFase() {
-            window.location.href = "../<pasta_da_fase>/<arquivo_da_fase>.html";
+            window.location.href = "";
         }
-        const botao = document.getElementById("botao-secreto");
-        const tooltip = document.getElementById("tooltip");
+        const botao2 = document.getElementById("botao-secreto")
+        const botao = document.getElementById("botao-secreto2");
+        const tooltip = document.getElementById("esquerada");
+        const topltip2 = document.getElementById("Direita")
 
         document.addEventListener("mousemove", (e) => {
             const rect = botao.getBoundingClientRect();
@@ -44,7 +47,7 @@
 
                 // Texto muda conforme a proximidade
                 if (dist < 60) {
-                    tooltip.textContent = "Banheira";
+                    tooltip.textContent = "esquerda";
                 }
                 
             } else {
@@ -52,8 +55,39 @@
             }
         });
 
+          document.addEventListener("mousemove", (e) => {
+            const rect = botao.getBoundingClientRect();
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const dist = Math.hypot(mouseX - centerX, mouseY - centerY);
+
+            // Mostra texto quando o mouse chega perto
+            if (dist < 150) {
+                tooltip2.style.opacity = 1;
+                tooltip2.style.left = mouseX + 20 + "px";
+                tooltip2.style.top = mouseY + 20 + "px";
+
+                // Texto muda conforme a proximidade
+                if (dist < 60) {
+                    tooltip2.textContent = "direita";
+                }
+                
+            } else {
+                tooltip2.style.opacity = 0;
+            }
+        });
+
+
         // Clicar no botão leva à próxima fase
         botao.addEventListener("click", () => {
+            proximaFase();
+        });
+
+        botao2.addEventListener("click", () => {
             proximaFase();
         });
     </script>
